@@ -161,7 +161,6 @@ static NSDictionary *RKConnectionAttributeValuesWithObject(RKConnectionDescripti
         NSDictionary *attributeValues = RKConnectionAttributeValuesWithObject(connection, self.managedObject);
         // If there are no attribute values available for connecting, skip the connection entirely
         if (! attributeValues) {
-            *shouldConnectRelationship = NO;
             return nil;
         }
         __block NSSet *managedObjects = [self.managedObjectCache managedObjectsWithEntity:[connection.relationship destinationEntity]
